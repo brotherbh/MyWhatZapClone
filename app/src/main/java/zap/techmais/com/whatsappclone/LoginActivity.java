@@ -37,9 +37,13 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         contextLongin = getApplicationContext();
 
-        FirebaseAuth auth = ReferenciaDBFireBase.getFirebaseAuth();
+
+    FirebaseAuth auth = ReferenciaDBFireBase.getFirebaseAuth();
+
         if (auth.getCurrentUser() !=null){
             irHomePrincipal(); }
+
+
 
 
         emailLogin = findViewById(R.id.emailLogin_id);

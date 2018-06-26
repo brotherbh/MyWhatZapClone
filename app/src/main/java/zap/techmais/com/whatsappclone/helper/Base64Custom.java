@@ -7,7 +7,7 @@ public class Base64Custom {
 
     public static String CodificarBase64(String texto){
 
-        return Base64.encodeToString(texto.getBytes(),Base64.DEFAULT).replaceAll("\\n | \\r","");
+        return Base64.encodeToString(texto.getBytes(),Base64.DEFAULT).replaceAll("(\\n | \\r)","");
 
     }//
 
@@ -16,16 +16,16 @@ public class Base64Custom {
 
 
 
-/*
-    public static String descodificar(String textoCodificado){
+
+    public static String Descodificar(String textoCodificado){
 
 
-       Base64.decode()
+      return new String( Base64.decode(textoCodificado,Base64.DEFAULT));
 
 
     }//
 
-*/
+
 
 
 

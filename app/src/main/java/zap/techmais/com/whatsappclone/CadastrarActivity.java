@@ -35,6 +35,7 @@ public class CadastrarActivity extends AppCompatActivity {
 
     private  Usuario usuario;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +72,7 @@ public class CadastrarActivity extends AppCompatActivity {
 
 
     private void cadastrarUserDBFire(){
+
             autentica = ReferenciaDBFireBase.getFirebaseAuth();
             autentica.createUserWithEmailAndPassword(usuario.getEmail(), usuario.getSenha()).addOnCompleteListener(
                     CadastrarActivity.this, new OnCompleteListener<AuthResult>() {
@@ -79,8 +81,12 @@ public class CadastrarActivity extends AppCompatActivity {
 
                             if (task.isSuccessful()) {
                                 Toast.makeText(getApplicationContext(), "Cadastro com Sucesso!!!", Toast.LENGTH_LONG).show();
-                                String geraIdBase64  = Base64Custom.CodificarBase64(usuario.getEmail());
-                                usuario.setId(geraIdBase64);
+
+
+
+                               String pegaId = task.getResult().getUser().getUid();
+
+                                usuario.setId(pegaId);
                                 usuario.salvarDBFire();
                                 irParaLog();
 
@@ -124,6 +130,7 @@ public class CadastrarActivity extends AppCompatActivity {
     public void irParaLog(){
         Intent intentLogar = new Intent(CadastrarActivity.this, LoginActivity.class);
         startActivity(intentLogar);
+        finish();
     }
 
 
