@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "391337584739",
+    "firebase_url": "https://oneappfirebase.firebaseio.com",
+    "project_id": "oneappfirebase",
+    "storage_bucket": "oneappfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391337584739:android:2601d9ae7d4bb49a",
+        "android_client_info": {
+          "package_name": "zap.techmais.com.whatsappclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "391337584739-28780najqdn2kh2kaujlun6hbhaj7kb0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "zap.techmais.com.whatsappclone",
+            "certificate_hash": "5ae4f0d5bc6416caa4afba59af5c0f1958ef539b"
+          }
+        },
+        {
+          "client_id": "391337584739-b9or74skmd8f5uk885o515p96u1gir0b.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "391337584739-b9or74skmd8f5uk885o515p96u1gir0b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAtVfO7EOoUHvTyBAOLrD6RnY3ThTxIZ0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "391337584739-b9or74skmd8f5uk885o515p96u1gir0b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
