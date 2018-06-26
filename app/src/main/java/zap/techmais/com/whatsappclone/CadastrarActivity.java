@@ -1,5 +1,6 @@
 package zap.techmais.com.whatsappclone;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.database.DatabaseReference;
 
+import zap.techmais.com.whatsappclone.helper.Base64Custom;
 import zap.techmais.com.whatsappclone.helper.ReferenciaDBFireBase;
 import zap.techmais.com.whatsappclone.models.Usuario;
 
@@ -55,7 +57,6 @@ public class CadastrarActivity extends AppCompatActivity {
             usuario.setNome(nomeCadastro.getText().toString());
             usuario.setEmail(emailCadastro.getText().toString());
             usuario.setSenha(senhaCadastro.getText().toString());
-
             cadastrarUserDBFire();
 
          }
@@ -78,11 +79,10 @@ public class CadastrarActivity extends AppCompatActivity {
 
                             if (task.isSuccessful()) {
                                 Toast.makeText(getApplicationContext(), "Cadastro com Sucesso!!!", Toast.LENGTH_LONG).show();
-
-                                usuario.setId(task.getResult().getUser().getUid());
+                                String geraIdBase64  = Base64Custom.CodificarBase64(usuario.getEmail());
+                                usuario.setId(geraIdBase64);
                                 usuario.salvarDBFire();
-                                autentica.signOut();
-                                finish();
+                                irParaLog();
 
 
                             } else {
@@ -119,6 +119,12 @@ public class CadastrarActivity extends AppCompatActivity {
             );
 
     }//
+
+
+    public void irParaLog(){
+        Intent intentLogar = new Intent(CadastrarActivity.this, LoginActivity.class);
+        startActivity(intentLogar);
+    }
 
 
 
